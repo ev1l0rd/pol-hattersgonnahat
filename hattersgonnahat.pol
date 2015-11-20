@@ -29,7 +29,7 @@ POL_SetupWindow_message "Steam will be installed. Make sure to launch Steam afte
 #Installing steam
 POL_Call POL_Install_steam
 
-POL_Shortcut "Hatfall.exe"
+POL_Shortcut "Hatfall.exe" "Hatfall"
 
 POL_Wine_Override_DLL "" "gameoverlayrenderer"
 
