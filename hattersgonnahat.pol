@@ -1,0 +1,37 @@
+#!/bin/bash
+# Date : 2015-11-20
+# Last revision : 2015-11-20
+# Wine version used :
+# Distribution used to test : LUbuntu 15.10
+# Author : Ev1l0rd
+
+[ "$PLAYONLINUX" = "" ] && exit 0
+source "$PLAYONLINUX/lib/sources"
+
+# Standarization Variables
+TITLE="Zero Punctuation: Hatfall - Hatters Gonna Hat Edition"
+PREFIX="hattersgonnahat"
+STEAM_ID=403700
+
+#The core part of the code
+POL_SetupWindow_Init
+
+POL_Debug_Init
+
+POL_SetupWindow_presentation "$TITLE" "Ben 'Yahtzee' Croshaw and Collected Worlds" "http://store.steampowered.com/app/403700/" "Ev1l0rd" "$PREFIX"
+
+POL_Wine_SelectPrefix "$PREFIX"
+POL_System_SetArch "x86"
+POL_Wine_PrefixCreate "1.6.2"
+
+POL_SetupWindow_message "Steam will be installed. Make sure to launch Steam after installation. Then log in onto your account and manually install $TITLE." "$TITLE"
+
+#Installing steam
+POL_Call POL_Install_steam
+
+POL_Shortcut "Hatfall.exe"
+
+POL_Wine_Override_DLL "" "gameoverlayrenderer"
+
+POL_SetupWindow_Close
+exit
