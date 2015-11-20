@@ -24,7 +24,7 @@ POL_Wine_SelectPrefix "$PREFIX"
 POL_System_SetArch "x86"
 POL_Wine_PrefixCreate "1.6.2"
 
-POL_SetupWindow_message "Steam will be installed. Make sure to launch Steam after installation. Then log in onto your account and manually install $TITLE." "$TITLE"
+POL_SetupWindow_message "$(eval_gettext 'Steam will be installed. Make sure to launch Steam after installation. Then log in onto your account and manually install $TITLE.')" "$TITLE"
 
 #Installing steam
 POL_Call POL_Install_steam
